@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearl — Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">P<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <span class="nav-mark">✦</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-script">Hello, I'm</p>
+    <h1 class="hero-name">Pearl</h1>
+    <p class="hero-title">Software Engineer &amp; Creative Technologist</p>
+    <p class="hero-bio">I build full-stack web and mobile products, from the database to the last pixel. Most recently: Spruce, an app for booking home cleaners in South Africa.</p>
+    <a href="#projects" class="btn-primary">View My Work →</a>
+  </div>
+
+  <div class="hero-image-wrapper">
+    <div class="hero-photo-frame">
+      <img src="images/pearl-portrait.jpg" alt="Pearl portrait" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="hero-photo-placeholder" style="display:none;"><span class="initials">P.</span></div>
+    </div>
+    <div class="hero-badge-ring"><span>Available for<br>New Projects</span></div>
+  </div>
+  <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-mark">✦</div>
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years Exp</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-mark">✦</div>
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-mark">✦</div>
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Clients</div>
+      </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects reveal" id="projects">
+  <div class="projects-header">
+    <div>
+      <p class="section-label">Selected Work</p>
+      <h2 class="section-heading">Projects</h2>
+    </div>
+    <a href="https://github.com/Pearl-Omphile" class="view-all" target="_blank" rel="noopener">All Work on GitHub →</a>
+  </div>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="project-img-bg p8"><img src="images/spruce.jpg" alt="Spruce app screens: home, choosing a cleaner, and booking review"></div>
+      <div class="project-overlay">
+        <div class="project-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span></div>
+        <h3 class="project-name">Spruce — Cleaning App</h3>
+        <p class="project-desc">Uber-style booking for home cleaners in South Africa: upfront pricing, nearby matching, ratings. Installs on any phone.</p>
+        <a href="https://pearl-omphile.github.io/spruce/" class="project-link" target="_blank" rel="noopener">Open App →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img-bg p7"><img src="images/beige-flamingo.png" alt="Beige Flamingo logo"></div>
+      <div class="project-overlay">
+        <div class="project-tags"><span class="tag">Next.js</span><span class="tag">PHP</span><span class="tag">MySQL</span></div>
+        <h3 class="project-name">Beige Flamingo</h3>
+        <p class="project-desc">Operations platform: packages, Paystack checkout, client accounts and admin.</p>
+        <a href="https://beigeflamingo.com" class="project-link" target="_blank" rel="noopener">Visit Site →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-bg p2">API</div>
+      <div class="project-overlay">
+        <div class="project-tags"><span class="tag">Python</span><span class="tag">FastAPI</span></div>
+        <h3 class="project-name">Analytics Dashboard</h3>
+        <p class="project-desc">Real-time visualisation for a fintech client, 50k+ events daily.</p>
+        <a href="#" class="project-link">Live Demo →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-bg p3">✦</div>
+      <div class="project-overlay">
+        <div class="project-tags"><span class="tag">Next.js</span><span class="tag">Prisma</span></div>
+        <h3 class="project-name">Stella — Social App</h3>
+        <p class="project-desc">Community platform with encrypted messaging and live notifications.</p>
+        <a href="#" class="project-link">Live Demo →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-bg p4">UX</div>
+      <div class="project-overlay">
+        <div class="project-tags"><span class="tag">TypeScript</span><span class="tag">Figma</span></div>
+        <h3 class="project-name">Design System</h3>
+        <p class="project-desc">80+ component library, fully accessible, with dark mode.</p>
+        <a href="#" class="project-link">Live Demo →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-bg p5">AI</div>
+      <div class="project-overlay">
+        <div class="project-tags"><span class="tag">Python</span><span class="tag">OpenAI</span></div>
+        <h3 class="project-name">AI Content Tool</h3>
+        <p class="project-desc">Content generation pipeline with custom fine-tuning workflows.</p>
+        <a href="#" class="project-link">Live Demo →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-bg p6"><img src="images/pearl-exe.png" alt="Pearl.exe" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';"></div>
+      <div class="project-overlay">
+        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+        <h3 class="project-name">Interactive Portfolio</h3>
+        <p class="project-desc">Immersive animations with a retro-inspired aesthetic.</p>
+        <a href="https://cool-portfolio-teal.vercel.app/" class="project-link" target="_blank" rel="noopener">Live Demo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + TOOLS -->
+<section class="about" id="about">
+  <div class="reveal">
+    <p class="section-label">Tools &amp; Tech</p>
+    <h2 class="section-heading">What I<br>Build With</h2>
+    <div class="tools-grid">
+      <div class="tool-pill"><div class="tool-icon">Re</div><div class="tool-label">React</div></div>
+      <div class="tool-pill"><div class="tool-icon">Ts</div><div class="tool-label">TypeScript</div></div>
+      <div class="tool-pill"><div class="tool-icon">No</div><div class="tool-label">Node.js</div></div>
+      <div class="tool-pill"><div class="tool-icon">Py</div><div class="tool-label">Python</div></div>
+      <div class="tool-pill"><div class="tool-icon">Pg</div><div class="tool-label">Postgres</div></div>
+      <div class="tool-pill"><div class="tool-icon">Aw</div><div class="tool-label">AWS</div></div>
+      <div class="tool-pill"><div class="tool-icon">Do</div><div class="tool-label">Docker</div></div>
+      <div class="tool-pill"><div class="tool-icon">Fg</div><div class="tool-label">Figma</div></div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <p class="section-label">About Me</p>
+    <h2 class="section-heading">Code Is My Craft</h2>
+    <p class="about-text" style="margin-top: 1.2rem;">I'm a software engineer who believes every line of code is a chance to create something exceptional. My background spans full-stack development, API architecture, and frontend design systems.</p>
+    <p class="about-text">When I'm not shipping features, you'll find me contributing to open source, exploring new frameworks, or obsessing over pixel-perfect interfaces.</p>
+    <p class="about-signature">Pearl</p>
+
+    <div style="margin-top: 2.5rem;">
+      <div class="exp-item">
+        <span class="exp-year">2024</span>
+        <div>
+          <div class="exp-role">Full-Stack Engineer (Intern / Junior)</div>
+          <div class="exp-company">Tech Startup, Johannesburg</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-year">2022</span>
+        <div>
+          <div class="exp-role">Front-end Developer</div>
+          <div class="exp-company">Digital Agency</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-year">2021</span>
+        <div>
+          <div class="exp-role">Junior Developer</div>
+          <div class="exp-company">First Footing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process reveal" id="process">
+  <div class="process-heading-wrap">
+    <p class="section-label">How I Work</p>
+    <h2 class="section-heading">My Build Process</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <div class="process-title">Discover</div>
+      <div class="process-desc">Understand the goal, users, and constraints.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-title">Architect</div>
+      <div class="process-desc">Plan the stack, data model, and API shape.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-title">Build</div>
+      <div class="process-desc">Write clean, tested, maintainable code.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-title">Refine</div>
+      <div class="process-desc">Polish UI, optimise performance, fix edge cases.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">05</div>
+      <div class="process-title">Ship</div>
+      <div class="process-desc">Deploy, monitor, and iterate with confidence.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL / CTA -->
+<section class="testimonial reveal" id="services">
+  <div>
+    <div class="testimonial-mark">❝</div>
+    <p class="testimonial-quote">Working with Pearl was an absolute pleasure. She delivered a product far beyond our expectations — technically brilliant, beautifully executed, and on time.</p>
+    <p class="testimonial-author">— Client, Johannesburg Startup</p>
+  </div>
+  <div class="testimonial-cta" id="contact">
+    <h3>Let's Build Something Great</h3>
+    <p>Have a project in mind? I'd love to hear about it and get back to you within 24 hours.</p>
+    <a href="mailto:pearl25pearly@gmail.com" class="btn-outline">Get In Touch →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-logo">Pearl<span>.</span></div>
+    <div class="footer-info">Johannesburg, South Africa</div>
+  </div>
+  <div class="footer-social">
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/27648530146"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="WhatsApp"
+       title="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:pearl25pearly@gmail.com"
+       aria-label="Email"
+       title="Email">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+
+    <!-- Bluesky -->
+    <a href="https://bsky.app/profile/0xpearl.bsky.social"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Bluesky"
+       title="Bluesky">
+        <i class="fa-brands fa-bluesky"></i>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@OxPearl"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TikTok"
+       title="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/p.e.a.r.l_m"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Instagram"
+       title="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/Pearl-Omphile"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="GitHub"
+       title="GitHub">
+        <i class="fa-brands fa-github"></i>
+    </a>
+
+</div>
+  <p class="footer-copy">© 2026 Pearl. Crafted with care.</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => obs.observe(r));
+
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow =
+      window.scrollY > 20 ? '0 2px 30px rgba(63,74,54,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>
