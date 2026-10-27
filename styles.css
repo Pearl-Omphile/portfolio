@@ -389,6 +389,66 @@
     padding-bottom: 2px;
   }
 
+  .project-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; }
+
+  button.project-link { background: none; border: 0; border-bottom: 1px solid var(--gold); padding: 0 0 2px; font: inherit; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream); cursor: pointer; }
+
+  /* ─── CRYSTAL POP-UP ─── */
+  .crystal {
+    border: 0; padding: 0; background: transparent; color: var(--cream);
+    width: min(560px, calc(100vw - 2rem)); margin: auto; overflow: visible;
+  }
+  .crystal::backdrop { background: rgba(51, 36, 40, 0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .crystal-inner {
+    position: relative; overflow: hidden;
+    padding: 2.4rem 2.2rem 2rem; border-radius: 22px;
+    background:
+      linear-gradient(145deg, rgba(255,255,255,0.30), rgba(255,255,255,0.06) 45%, rgba(234,214,218,0.18)),
+      rgba(107, 46, 67, 0.62);
+    backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(255,255,255,0.12), 0 40px 90px -30px rgba(51,36,40,0.75);
+  }
+  /* Faceted, iridescent edge like cut crystal */
+  .crystal-inner::before {
+    content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none;
+    background: conic-gradient(from 210deg, #ffffff, #EAD6DA, #C9B6F0, #B7E3F2, #FAF3F1, #F0C9D3, #ffffff);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+  /* Light catching the glass */
+  .crystal-inner::after {
+    content: ''; position: absolute; top: -40%; left: -30%; width: 60%; height: 180%; pointer-events: none;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.22), transparent);
+    transform: rotate(18deg);
+  }
+  .crystal[open] .crystal-inner { animation: crystalIn 0.45s cubic-bezier(.2,.8,.2,1); }
+  .crystal[open] .crystal-inner::after { animation: shine 1.6s ease 0.15s both; }
+  @keyframes crystalIn { from { opacity: 0; transform: translateY(14px) scale(0.96); } to { opacity: 1; transform: none; } }
+  @keyframes shine { from { left: -60%; } to { left: 120%; } }
+  @media (prefers-reduced-motion: reduce) { .crystal[open] .crystal-inner, .crystal[open] .crystal-inner::after { animation: none; } }
+
+  .crystal-close {
+    position: absolute; top: 0.9rem; right: 1rem; z-index: 1;
+    width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: var(--cream);
+    font-size: 1.3rem; line-height: 1;
+  }
+  .crystal-close:hover { background: rgba(255,255,255,0.25); }
+  .crystal-status { font-size: 0.72rem; letter-spacing: 0.08em; color: #F0C9D3; margin-bottom: 0.5rem; }
+  .crystal-title { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 600; line-height: 1; }
+  .crystal-lead { font-size: 0.98rem; line-height: 1.65; margin: 0.9rem 0 1.4rem; color: rgba(250,243,241,0.92); }
+  .crystal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; padding: 1.2rem 0; border-top: 1px solid rgba(255,255,255,0.18); }
+  .crystal-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #F0C9D3; margin-bottom: 0.45rem; }
+  .crystal-text { font-size: 0.86rem; line-height: 1.65; color: rgba(250,243,241,0.85); }
+  .crystal-list { list-style: none; display: grid; gap: 0.35rem; font-size: 0.86rem; color: rgba(250,243,241,0.85); }
+  .crystal-list li::before { content: '✦'; color: #F0C9D3; font-size: 0.6rem; margin-right: 0.55rem; vertical-align: 2px; }
+  .crystal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+  @media (max-width: 560px) {
+    .crystal-inner { padding: 2.2rem 1.4rem 1.6rem; }
+    .crystal-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .crystal-title { font-size: 2rem; }
+  }
+
   /* ─── TOOLS + ABOUT ─── */
   .about {
     padding: 6rem 4rem 7rem;

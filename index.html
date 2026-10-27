@@ -76,7 +76,10 @@
         <div class="project-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span></div>
         <h3 class="project-name">Spruce — Cleaning App</h3>
         <p class="project-desc">Uber-style booking for home cleaners in South Africa: upfront pricing, nearby matching, ratings and photo check-ins.</p>
-        <a href="https://pearl-omphile.github.io/spruce/" class="project-link" target="_blank" rel="noopener">Open App →</a>
+        <div class="project-links">
+          <a href="https://pearl-omphile.github.io/spruce/" class="project-link" target="_blank" rel="noopener">Open App →</a>
+          <a href="https://github.com/Pearl-Omphile/spruce/releases/latest/download/spruce.apk" class="project-link" download>Download for Android ↓</a>
+        </div>
       </div>
     </div>
     <div class="project-card">
@@ -95,7 +98,7 @@
         <div class="project-tags"><span class="tag">C++</span><span class="tag">Qt</span><span class="tag">Supabase</span></div>
         <h3 class="project-name">Quillquest — Study App</h3>
         <p class="project-desc">A cozy pixel-art study app for desktop and Android: pomodoro, flashcards, notes, planner and friends.</p>
-        <a href="#" class="project-link">View Project →</a>
+        <button type="button" class="project-link project-more" data-project="quillquest" aria-haspopup="dialog">Learn More →</button>
       </div>
     </div>
 
@@ -105,7 +108,7 @@
         <div class="project-tags"><span class="tag">JavaScript</span><span class="tag">Skulpt</span><span class="tag">HTML/CSS</span></div>
         <h3 class="project-name">Byte Valley — Learning Game</h3>
         <p class="project-desc">58 real coding quests across Python, C++, cyber security and Raspberry Pi, in your browser.</p>
-        <a href="#" class="project-link">View Project →</a>
+        <button type="button" class="project-link project-more" data-project="bytevalley" aria-haspopup="dialog">Learn More →</button>
       </div>
     </div>
 
@@ -284,6 +287,28 @@
   <p class="footer-copy">© 2026 Pearl. Crafted with care.</p>
 </footer>
 
+
+<!-- PROJECT DETAILS: crystal pop-up for projects without a public link yet -->
+<dialog class="crystal" id="project-dialog" aria-labelledby="crystal-title">
+  <div class="crystal-inner">
+    <button type="button" class="crystal-close" aria-label="Close">&times;</button>
+    <p class="crystal-status"></p>
+    <h3 class="crystal-title" id="crystal-title"></h3>
+    <p class="crystal-lead"></p>
+    <div class="crystal-grid">
+      <div>
+        <p class="crystal-label">What it's for</p>
+        <p class="crystal-text crystal-purpose"></p>
+      </div>
+      <div>
+        <p class="crystal-label">Inside</p>
+        <ul class="crystal-list"></ul>
+      </div>
+    </div>
+    <div class="crystal-tags"></div>
+  </div>
+</dialog>
+
 <script>
   const reveals = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
@@ -300,6 +325,40 @@
     document.querySelector('nav').style.boxShadow =
       window.scrollY > 20 ? '0 2px 30px rgba(63,74,54,0.08)' : 'none';
   });
+
+  // Project details pop-up (Quillquest, Byte Valley)
+  const PROJECTS = {
+    quillquest: {
+      status: 'In development · desktop and Android',
+      title: 'Quillquest',
+      lead: 'A cozy pixel-art study app that makes long revision sessions feel like a quest instead of a chore.',
+      purpose: 'For students who want one calm place to focus, revise and plan, with friends along for motivation.',
+      inside: ['Pomodoro focus timer', 'Flashcards for revision', 'Notes', 'Study planner', 'Friends to study alongside'],
+      tags: ['C++', 'Qt', 'Supabase'],
+    },
+    bytevalley: {
+      status: 'In development · plays in the browser',
+      title: 'Byte Valley',
+      lead: 'A learning game with 58 real coding quests: you learn by writing code that actually runs.',
+      purpose: 'For beginners who learn best by doing. No installs: open it in a browser and start coding.',
+      inside: ['58 hands-on quests', 'Python', 'C++', 'Cyber security', 'Raspberry Pi'],
+      tags: ['JavaScript', 'Skulpt', 'HTML/CSS'],
+    },
+  };
+  const dlg = document.getElementById('project-dialog');
+  const fill = (sel, text) => { dlg.querySelector(sel).textContent = text; };
+  document.querySelectorAll('.project-more').forEach(btn => btn.addEventListener('click', () => {
+    const p = PROJECTS[btn.dataset.project];
+    fill('.crystal-status', p.status);
+    fill('.crystal-title', p.title);
+    fill('.crystal-lead', p.lead);
+    fill('.crystal-purpose', p.purpose);
+    dlg.querySelector('.crystal-list').replaceChildren(...p.inside.map(t => Object.assign(document.createElement('li'), { textContent: t })));
+    dlg.querySelector('.crystal-tags').replaceChildren(...p.tags.map(t => Object.assign(document.createElement('span'), { className: 'tag', textContent: t })));
+    dlg.showModal();
+  }));
+  dlg.querySelector('.crystal-close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });  // click outside to close
 </script>
 </body>
 </html>
