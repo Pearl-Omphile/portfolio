@@ -337,8 +337,9 @@
   .p5 { background: linear-gradient(135deg, #332428 0%, #6b2e43 100%); }
   .p6 { background: linear-gradient(135deg, #c08a9b 0%, #332428 100%); }
   .p7 { background: #FFFFFF; }
-  .p8 { background: #0E2E52; }
-  .p8 img { object-fit: cover; object-position: center 12%; }
+  .p8, .p9 { background: #332428; }
+  .p-spruce { background: #0E2E52; }
+  .p-spruce img { object-fit: cover; object-position: center 12%; }
   .p7 + .project-overlay { background: linear-gradient(0deg, rgba(38,38,32,0.95) 0%, rgba(38,38,32,0.92) 50%, rgba(38,38,32,0) 64%); }
   .p7 img { object-fit: contain; padding: 0.8rem 1rem 9.8rem; }
 
