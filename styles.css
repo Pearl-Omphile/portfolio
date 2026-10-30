@@ -55,6 +55,12 @@
     text-decoration: none;
   }
   .nav-logo span { color: var(--gold); }
+  .nav-logo { display: inline-flex; align-items: center; color: var(--sage-deep); transition: color 0.3s, transform 0.4s ease; }
+  .nav-monogram { height: 58px; width: auto; display: block; overflow: visible; }
+  .nav-monogram .nav-spark { fill: var(--gold); transform-box: fill-box; transform-origin: center; transition: transform 0.5s ease; }
+  .nav-logo:hover { color: var(--gold); }
+  .nav-logo:hover .nav-spark { transform: rotate(90deg) scale(1.25); }
+  @media (max-width: 760px) { .nav-monogram { height: 46px; } }
 
   .nav-links {
     display: flex;
