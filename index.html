@@ -24,7 +24,7 @@
   <ul class="nav-links">
     <li><a href="#projects">Work</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
+    <li><a href="#services">Latest</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -51,18 +51,18 @@
   <div class="hero-stats">
       <div class="stat-item">
         <div class="stat-mark">✦</div>
-        <div class="stat-num">3+</div>
-        <div class="stat-label">Years Exp</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-mark">✦</div>
-        <div class="stat-num">20+</div>
+        <div class="stat-num">5</div>
         <div class="stat-label">Projects</div>
       </div>
       <div class="stat-item">
         <div class="stat-mark">✦</div>
-        <div class="stat-num">15+</div>
-        <div class="stat-label">Clients</div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Live Online</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-mark">✦</div>
+        <div class="stat-num">2</div>
+        <div class="stat-label">In Progress</div>
       </div>
   </div>
 </section>
@@ -86,7 +86,8 @@
         <p class="project-desc">Uber-style booking for home cleaners in South Africa: upfront pricing, nearby matching, ratings and photo check-ins.</p>
         <div class="project-links">
           <a href="https://pearl-omphile.github.io/spruce/" class="project-link" target="_blank" rel="noopener">Open App →</a>
-          <a href="https://github.com/Pearl-Omphile/spruce/releases/latest/download/spruce.apk" class="project-link" download>Download for Android ↓</a>
+          <a href="https://github.com/Pearl-Omphile/spruce/releases/latest/download/spruce.apk" class="project-link" data-os="android" download>Download for Android ↓</a>
+          <button type="button" class="project-link project-more" data-project="spruce-ios" data-os="ios" aria-haspopup="dialog" hidden>Add to iPhone ↓</button>
         </div>
       </div>
     </div>
@@ -153,29 +154,29 @@
     <p class="section-label">About Me</p>
     <h2 class="section-heading">Code Is My Craft</h2>
     <p class="about-text" style="margin-top: 1.2rem;">I'm a software engineer who believes every line of code is a chance to create something exceptional. My background spans full-stack development, API architecture, and frontend design systems.</p>
-    <p class="about-text">When I'm not shipping features, you'll find me contributing to open source, exploring new frameworks, or obsessing over pixel-perfect interfaces.</p>
+    <p class="about-text">When I'm not shipping features, you'll find me exploring new frameworks or obsessing over pixel-perfect interfaces.</p>
     <p class="about-signature">Pearl</p>
 
     <div style="margin-top: 2.5rem;">
       <div class="exp-item">
-        <span class="exp-year">2024</span>
+        <span class="exp-year">2026</span>
         <div>
-          <div class="exp-role">Full-Stack Engineer (Intern / Junior)</div>
-          <div class="exp-company">Tech Startup, Johannesburg</div>
+          <div class="exp-role">Spruce — built &amp; launched</div>
+          <div class="exp-company">Full-stack cleaning-booking app · React, Supabase, Android</div>
         </div>
       </div>
       <div class="exp-item">
-        <span class="exp-year">2022</span>
+        <span class="exp-year">Live</span>
         <div>
-          <div class="exp-role">Front-end Developer</div>
-          <div class="exp-company">Digital Agency</div>
+          <div class="exp-role">Beige Flamingo</div>
+          <div class="exp-company">Operations platform with Paystack checkout · Next.js, PHP, MySQL</div>
         </div>
       </div>
       <div class="exp-item">
-        <span class="exp-year">2021</span>
+        <span class="exp-year">Now</span>
         <div>
-          <div class="exp-role">Junior Developer</div>
-          <div class="exp-company">First Footing</div>
+          <div class="exp-role">Quillquest &amp; Byte Valley</div>
+          <div class="exp-company">In development · a study app and a coding game</div>
         </div>
       </div>
     </div>
@@ -220,9 +221,9 @@
 <!-- TESTIMONIAL / CTA -->
 <section class="testimonial reveal" id="services">
   <div>
-    <div class="testimonial-mark">❝</div>
-    <p class="testimonial-quote">Working with Pearl was an absolute pleasure. She delivered a product far beyond our expectations — technically brilliant, beautifully executed, and on time.</p>
-    <p class="testimonial-author">— Client, Johannesburg Startup</p>
+    <div class="testimonial-mark">✦</div>
+    <p class="testimonial-quote">Latest build: Spruce, an app for booking home cleaners in South Africa, with live chat, photo check-ins, two-way ratings and a database that makes double bookings impossible.</p>
+    <a href="https://pixelpearl.site/spruce/" class="testimonial-author" target="_blank" rel="noopener">Try it at pixelpearl.site/spruce →</a>
   </div>
   <div class="testimonial-cta" id="contact">
     <h3>Let's Build Something Great</h3>
@@ -296,15 +297,16 @@
     <p class="crystal-lead"></p>
     <div class="crystal-grid">
       <div>
-        <p class="crystal-label">What it's for</p>
+        <p class="crystal-label crystal-label-purpose">What it's for</p>
         <p class="crystal-text crystal-purpose"></p>
       </div>
       <div>
-        <p class="crystal-label">Inside</p>
+        <p class="crystal-label crystal-label-inside">Inside</p>
         <ul class="crystal-list"></ul>
       </div>
     </div>
     <div class="crystal-tags"></div>
+    <a class="btn-outline crystal-go" href="#" target="_blank" rel="noopener" hidden></a>
   </div>
 </dialog>
 
@@ -343,7 +345,20 @@
       inside: ['58 hands-on quests', 'Python', 'C++', 'Cyber security', 'Raspberry Pi'],
       tags: ['JavaScript', 'Skulpt', 'HTML/CSS'],
     },
+    'spruce-ios': {
+      status: 'Spruce on iPhone · no App Store needed',
+      title: 'Add Spruce to your iPhone',
+      lead: 'Spruce installs straight from Safari and opens full screen with its own icon, just like an app.',
+      purpose: 'Open pixelpearl.site/spruce in Safari, tap the Share button at the bottom, then choose "Add to Home Screen".',
+      inside: ['Book a clean in about a minute', 'Live chat with your cleaner', 'Photo check-in and check-out', 'Ratings and problem reports'],
+      tags: ['Works in Safari', 'Free'],
+      link: { href: 'https://pixelpearl.site/spruce/', text: 'Open Spruce in Safari →' },
+    },
   };
+  // Show iPhone visitors the iPhone option instead of the Android download
+  const ua = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && 'ontouchend' in document);
+  if (isIOS) document.querySelectorAll('[data-os]').forEach(el => { el.hidden = el.dataset.os !== 'ios'; });
   const dlg = document.getElementById('project-dialog');
   const fill = (sel, text) => { dlg.querySelector(sel).textContent = text; };
   document.querySelectorAll('.project-more').forEach(btn => btn.addEventListener('click', () => {
@@ -354,6 +369,11 @@
     fill('.crystal-purpose', p.purpose);
     dlg.querySelector('.crystal-list').replaceChildren(...p.inside.map(t => Object.assign(document.createElement('li'), { textContent: t })));
     dlg.querySelector('.crystal-tags').replaceChildren(...p.tags.map(t => Object.assign(document.createElement('span'), { className: 'tag', textContent: t })));
+    fill('.crystal-label-purpose', p.link ? 'How to install' : "What it's for");
+    fill('.crystal-label-inside', p.link ? "What's inside" : 'Inside');
+    const go = dlg.querySelector('.crystal-go');
+    go.hidden = !p.link;
+    if (p.link) { go.href = p.link.href; go.textContent = p.link.text; }
     dlg.showModal();
   }));
   dlg.querySelector('.crystal-close').addEventListener('click', () => dlg.close());
