@@ -88,6 +88,7 @@
           <a href="https://pearl-omphile.github.io/spruce/" class="project-link" target="_blank" rel="noopener">Open App →</a>
           <a href="https://github.com/Pearl-Omphile/spruce/releases/latest/download/spruce.apk" class="project-link" data-os="android" download>Download for Android ↓</a>
           <button type="button" class="project-link project-more" data-project="spruce-ios" data-os="ios" aria-haspopup="dialog" hidden>Add to iPhone ↓</button>
+          <button type="button" class="project-link project-more" data-project="spruce-phone" data-os="desktop" aria-haspopup="dialog" hidden>Get it on your phone ↓</button>
         </div>
       </div>
     </div>
@@ -295,6 +296,7 @@
     <p class="crystal-status"></p>
     <h3 class="crystal-title" id="crystal-title"></h3>
     <p class="crystal-lead"></p>
+    <img class="crystal-qr" src="images/spruce-qr.svg" alt="QR code that opens Spruce on your phone" width="168" height="168" hidden>
     <div class="crystal-grid">
       <div>
         <p class="crystal-label crystal-label-purpose">What it's for</p>
@@ -354,11 +356,22 @@
       tags: ['Works in Safari', 'Free'],
       link: { href: 'https://pixelpearl.site/spruce/', text: 'Open Spruce in Safari →' },
     },
+    'spruce-phone': {
+      status: 'Spruce on your phone · free',
+      title: 'Scan to get Spruce',
+      lead: 'Point your phone camera at the code. It opens Spruce, which shows the right install option for your phone.',
+      purpose: 'Android: tap "Download for Android" in Profile and install the app. iPhone: in Safari, tap Share, then "Add to Home Screen".',
+      inside: ['Book a clean in about a minute', 'Live chat with your cleaner', 'Photo check-in and check-out', 'Ratings and problem reports'],
+      tags: ['Android', 'iPhone', 'Free'],
+      qr: true,
+      link: { href: 'https://pixelpearl.site/spruce/', text: 'Or try it here in the browser →' },
+    },
   };
-  // Show iPhone visitors the iPhone option instead of the Android download
+  // Show each visitor the install option for their device: Android download, iPhone steps, or a QR code on computers
   const ua = navigator.userAgent;
   const isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && 'ontouchend' in document);
-  if (isIOS) document.querySelectorAll('[data-os]').forEach(el => { el.hidden = el.dataset.os !== 'ios'; });
+  const os = isIOS ? 'ios' : /Android/i.test(ua) ? 'android' : 'desktop';
+  document.querySelectorAll('[data-os]').forEach(el => { el.hidden = el.dataset.os !== os; });
   const dlg = document.getElementById('project-dialog');
   const fill = (sel, text) => { dlg.querySelector(sel).textContent = text; };
   document.querySelectorAll('.project-more').forEach(btn => btn.addEventListener('click', () => {
@@ -371,6 +384,7 @@
     dlg.querySelector('.crystal-tags').replaceChildren(...p.tags.map(t => Object.assign(document.createElement('span'), { className: 'tag', textContent: t })));
     fill('.crystal-label-purpose', p.link ? 'How to install' : "What it's for");
     fill('.crystal-label-inside', p.link ? "What's inside" : 'Inside');
+    dlg.querySelector('.crystal-qr').hidden = !p.qr;
     const go = dlg.querySelector('.crystal-go');
     go.hidden = !p.link;
     if (p.link) { go.href = p.link.href; go.textContent = p.link.text; }
